@@ -2,7 +2,7 @@
   "name": "grunt-rtlcss",
   "description": "grunt plugin for RTLCSS, a framework for transforming CSS from LTR to RTL.",
   "version": "0.1.0",
-  "homepage": "https://github.com/myounes/grunt-rtlcss",
+  "homepage": "https://github.com/MohammadYounes/grunt-rtlcss",
   "author": {
     "name": "Mohammad Younes",
     "email": "myounes@gmail.com",
