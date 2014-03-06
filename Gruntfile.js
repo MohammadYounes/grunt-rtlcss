@@ -15,7 +15,7 @@ module.exports = function(grunt) {
   
     // Configuration to be run.
     rtlcss: {
-      transform:{
+      'default':{
         options:{
           // configure rtlcss options  
           config:{
