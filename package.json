@@ -1,0 +1,39 @@
+{
+  "name": "grunt-rtlcss",
+  "description": "grunt plugin for RTLCSS, a framework for transforming CSS from LTR to RTL.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/myounes/grunt-rtlcss",
+  "author": {
+    "name": "Mohammad Younes",
+    "email": "myounes@gmail.com",
+    "url": "https://github.com/MohammadYounes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MohammadYounes/grunt-rtlcss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MohammadYounes/grunt-rtlcss/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/MohammadYounes/grunt-rtlcss/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "rtlcss" : "0.1.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
+    "grunt rtlcss", "css", "rtl", "ltr", "rtlcss", "mirror", "flip"
+  ]
+}
