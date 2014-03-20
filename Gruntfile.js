@@ -17,10 +17,18 @@ module.exports = function(grunt) {
     rtlcss: {
       'default':{
         options:{
-          // configure rtlcss options  
+          // rtlcss options  
           config:{
             
-          }
+          },
+          // extend rtlcss rules 
+          rules:[],
+          // extend rtlcss declarations
+          declarations:[],
+          // extend rtlcss properties
+          properties:[],
+          // generate source maps
+          map: false,
         },
         expand : true,
         cwd    : 'ltr/',

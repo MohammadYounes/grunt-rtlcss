@@ -9,9 +9,9 @@ module.exports = function(grunt) {
 'use strict';
     
   grunt.registerMultiTask('rtlcss', 'grunt plugin for rtlcss, a framework for transforming CSS from LTR to RTL.', function() {
-
-    // include rtlcss
+    
     var rtlcss = require('rtlcss');
+    var postcss = require('postcss');    
     
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
@@ -28,8 +28,12 @@ module.exports = function(grunt) {
       },
       rules:[],
       declarations:[],
-      properties:[]       
+      properties:[],
+      map: false,
     });
+    
+    // postcss options
+    var opt = { map: options.map, from:'', to:''};
     
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
@@ -43,19 +47,26 @@ module.exports = function(grunt) {
           return true;
         }
       }).map(function(filepath) {
+        opt.from = filepath;
         // Read file source.
         return grunt.file.read(filepath);
       });
       
       // RTLCSS
-      src =  rtlcss.process(src,
-                    options.config,
-                    options.rules,
-                    options.declarations,
-                    options.properties);
+      opt.to = f.dest;
+      var processor = rtlcss(options.config,
+                             options.rules,
+                             options.declarations,
+                             options.properties).postcss;
+      
+      var result =  postcss().use(processor).process(src,opt);
 
       // Write the destination file.
-      grunt.file.write(f.dest, src);
+      grunt.file.write(f.dest, result.css);
+
+      // Write the destination source map file.
+      if(options.map)
+        grunt.file.write(f.dest + '.map', result.map);
 
       // Print a success message.
       grunt.log.writeln('File "' + f.dest + '" created.');
