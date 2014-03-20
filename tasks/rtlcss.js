@@ -1,6 +1,6 @@
 /*
  * grunt-rtlcss
- * https://github.com/myounes/grunt-rtlcss
+ * https://github.com/MohammadYounes/grunt-rtlcss
  *
  * Copyright (c) 2014 Mohammad Younes
  * Licensed under the MIT license.
