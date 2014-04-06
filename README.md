@@ -8,6 +8,9 @@ grunt plugin for [RTLCSS], a framework for transforming CSS from LTR to RTL.
 -------
 
 ## Release History
+* **v0.4.0** [6 Apr. 2014]
+  * Upgrade to [RTLCSS] v0.4.0
+  
 * **v0.3.0** [5 Apr. 2014]
   * Upgrade to [RTLCSS] v0.3.0
 
