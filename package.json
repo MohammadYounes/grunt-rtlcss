@@ -1,7 +1,7 @@
 {
   "name": "grunt-rtlcss",
   "description": "grunt plugin for RTLCSS, a framework for transforming CSS from LTR to RTL.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "homepage": "https://github.com/MohammadYounes/grunt-rtlcss",
   "author": {
     "name": "Mohammad Younes",
@@ -25,7 +25,8 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "rtlcss" : "0.4.0"
+    "rtlcss" : "0.4.0",
+    "postcss":"0.3.4"
   },
   "devDependencies": {
     "grunt": "~0.4.2"
