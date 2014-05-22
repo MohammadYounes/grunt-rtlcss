@@ -1,3 +1,6 @@
+[![GitHub version](https://badge.fury.io/gh/MohammadYounes%2Fgrunt-rtlcss.svg)](http://badge.fury.io/gh/MohammadYounes%2Fgrunt-rtlcss)
+[![NPM version](https://badge.fury.io/js/grunt-rtlcss.svg)](http://badge.fury.io/js/grunt-rtlcss)
+
 grunt-rtlcss
 ============
 grunt plugin for [RTLCSS], a framework for transforming CSS from LTR to RTL.
