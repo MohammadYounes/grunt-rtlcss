@@ -11,7 +11,6 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('rtlcss', 'grunt plugin for rtlcss, a framework for transforming CSS from LTR to RTL.', function() {
     
     var rtlcss = require('rtlcss');
-    var postcss = require('postcss');    
     
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
@@ -54,13 +53,11 @@ module.exports = function(grunt) {
       
       // RTLCSS
       opt.to = f.dest;
-      var processor = rtlcss(options.config,
+      var result = rtlcss(options.config,
                              options.rules,
                              options.declarations,
-                             options.properties).postcss;
+                             options.properties).process(src,opt);
       
-      var result =  postcss().use(processor).process(src,opt);
-
       // Write the destination file.
       grunt.file.write(f.dest, result.css);
 

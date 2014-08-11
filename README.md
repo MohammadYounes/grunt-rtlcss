@@ -6,11 +6,121 @@ grunt-rtlcss
 grunt plugin for [RTLCSS], a framework for transforming CSS from LTR to RTL.
 
 
+## Getting Started
+This plugin requires Grunt `~0.4.1`
+
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+
+```shell
+npm install grunt-rtlcss --save-dev
+```
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+```js
+grunt.loadNpmTasks('grunt-rtlcss');
+```
+
+
+
+## RTLCSS task
+_Run this task with the `grunt rtlcss` command._
+
+Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
+
+### Options
+
+#### config
+Description: Specifies [RTLCSS options](https://github.com/MohammadYounes/rtlcss#options-object).
+
+Type: `Object`
+
+Default:
+
+```JS
+{
+	preserveComments: true,
+	preserveDirectives: false,
+	swapLeftRightInUrl: true,
+	swapLtrRtlInUrl: true,
+	swapWestEastInUrl: true,
+	autoRename: true,
+	greedy: false,
+	enableLogging: false,
+	minify:false 
+}
+```
+
+#### rules
+Description: Specifies custom [RTLCSS rule level](https://github.com/MohammadYounes/rtlcss#rules-array) processing instructions.
+
+Type: `Array`
+
+Default: `[]`
+
+
+#### declarations
+Description: Specifies custom [RTLCSS declaration level](https://github.com/MohammadYounes/rtlcss#declarations-array) processing instructions.
+
+Type: `Array`
+
+Default: `[]`
+ 
+ 
+#### properties
+Description: Specifies custom [RTLCSS property level](https://github.com/MohammadYounes/rtlcss#properties-array) processing instructions.
+
+Type: `Array`
+
+Default: `[]`
+
+
+#### map
+Description: Specifies whether to generate source maps or not.
+
+Type: `Boolean`
+
+Default: `false`
+
+
+### Usage Example
+
+```JS
+rtlcss: {
+  'default':{
+	options:{
+	  // rtlcss options  
+	  config:{
+	  	preserveComments: false,
+	  	greedy: true
+	  },
+	  // extend rtlcss rules 
+	  rules:[],
+	  // extend rtlcss declarations
+	  declarations:[],
+	  // extend rtlcss properties
+	  properties:[],
+	  // generate source maps
+	  map: false,
+	},
+	expand : true,
+	cwd    : 'ltr/',
+	dest   : 'rtl/',
+	src    : ['**/*.css']
+  }
+}
+```
+
+
 [RTLCSS]: https://github.com/MohammadYounes/rtlcss
 
 -------
 
 ## Release History
+* **v0.7.0** [11 Aug 2014]
+  * Remove duplicate postcss dependency.
+  * Upgrade to [RTLCSS] v0.9.0  
+
 * **v0.6.0** [4 Jul 2014]
   * Upgrade to [RTLCSS] v0.7.0
   
