@@ -117,6 +117,9 @@ rtlcss: {
 -------
 
 ## Release History
+* **v1.0.0** [24 Aug 2014]
+  * Upgrade to [RTLCSS] v1.0.0  
+
 * **v0.7.0** [11 Aug 2014]
   * Remove duplicate postcss dependency.
   * Upgrade to [RTLCSS] v0.9.0  
