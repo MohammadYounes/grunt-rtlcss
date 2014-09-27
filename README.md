@@ -1,6 +1,7 @@
 [![GitHub version](https://badge.fury.io/gh/MohammadYounes%2Fgrunt-rtlcss.svg)](http://badge.fury.io/gh/MohammadYounes%2Fgrunt-rtlcss)
 [![NPM version](https://badge.fury.io/js/grunt-rtlcss.svg)](http://badge.fury.io/js/grunt-rtlcss)
-![DEPENDENCIES](https://david-dm.org/MohammadYounes/grunt-rtlcss.svg)
+[![DEPENDENCIES](https://david-dm.org/MohammadYounes/grunt-rtlcss.svg)](https://david-dm.org/MohammadYounes/grunt-rtlcss)
+
 grunt-rtlcss
 ============
 grunt plugin for [RTLCSS], a framework for transforming CSS from LTR to RTL.
@@ -117,12 +118,15 @@ rtlcss: {
 -------
 
 ## Release History
+* **v1.1.0** [27 Sep 2014]
+  * Upgrade to [RTLCSS] v1.2.0
+
 * **v1.0.0** [24 Aug 2014]
-  * Upgrade to [RTLCSS] v1.0.0  
+  * Upgrade to [RTLCSS] v1.0.0
 
 * **v0.7.0** [11 Aug 2014]
   * Remove duplicate postcss dependency.
-  * Upgrade to [RTLCSS] v0.9.0  
+  * Upgrade to [RTLCSS] v0.9.0
 
 * **v0.6.0** [4 Jul 2014]
   * Upgrade to [RTLCSS] v0.7.0
@@ -151,4 +155,3 @@ rtlcss: {
 
 * **v0.1.0** [6 Mar. 2014]
   * Initial commit.
- 
