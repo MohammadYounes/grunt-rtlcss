@@ -47,6 +47,7 @@ Default:
 	swapWestEastInUrl: true,
 	autoRename: true,
 	greedy: false,
+	stringMap:[...],
 	enableLogging: false,
 	minify:false 
 }
@@ -118,6 +119,9 @@ rtlcss: {
 -------
 
 ## Release History
+* **v1.2.0** [28 Sep 2014]
+  * Upgrade to [RTLCSS] v1.3.0
+
 * **v1.1.0** [27 Sep 2014]
   * Upgrade to [RTLCSS] v1.2.0
 
