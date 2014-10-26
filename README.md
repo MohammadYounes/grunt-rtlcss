@@ -49,7 +49,7 @@ Default:
 	greedy: false,
 	stringMap:[...],
 	enableLogging: false,
-	minify:false 
+	minify:false
 }
 ```
 
@@ -67,8 +67,8 @@ Description: Specifies custom [RTLCSS declaration level](https://github.com/Moha
 Type: `Array`
 
 Default: `[]`
- 
- 
+
+
 #### properties
 Description: Specifies custom [RTLCSS property level](https://github.com/MohammadYounes/rtlcss#properties-array) processing instructions.
 
@@ -96,7 +96,7 @@ rtlcss: {
 	  	preserveComments: false,
 	  	greedy: true
 	  },
-	  // extend rtlcss rules 
+	  // extend rtlcss rules
 	  rules:[],
 	  // extend rtlcss declarations
 	  declarations:[],
@@ -119,6 +119,9 @@ rtlcss: {
 -------
 
 ## Release History
+* **v1.3.0** [26 Oct 2014]
+	* Upgrade to [RTLCSS] v1.4.2
+
 * **v1.2.0** [28 Sep 2014]
   * Upgrade to [RTLCSS] v1.3.0
 
@@ -134,26 +137,26 @@ rtlcss: {
 
 * **v0.6.0** [4 Jul 2014]
   * Upgrade to [RTLCSS] v0.7.0
-  
+
 * **v0.5.0** [4 Jul 2014]
   * Upgrade to [RTLCSS] v0.6.0
-  
+
 * **v0.4.1** [15 May 2014]
   * Add POSTCSS to dependencies list.
-  
+
 * **v0.4.0** [6 Apr. 2014]
   * Upgrade to [RTLCSS] v0.4.0
-  
+
 * **v0.3.0** [5 Apr. 2014]
   * Upgrade to [RTLCSS] v0.3.0
 
 * **v0.2.0** [20 Mar. 2014]
   * Upgrade to [RTLCSS] v0.2.1
   * Support generating source maps.
-  
+
 * **v0.1.2** [7 Mar. 2014]
   * Upgrade to [RTLCSS] v0.1.3
-  
+
 * **v0.1.1** [6 Mar. 2014]
   * Fix typo in README.md
 
