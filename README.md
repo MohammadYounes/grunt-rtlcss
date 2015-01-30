@@ -119,6 +119,9 @@ rtlcss: {
 -------
 
 ## Release History
+* **v1.4.0** [26 Oct 2014]
+	* Upgrade to [RTLCSS] v1.x.x
+
 * **v1.3.0** [26 Oct 2014]
 	* Upgrade to [RTLCSS] v1.4.2
 
