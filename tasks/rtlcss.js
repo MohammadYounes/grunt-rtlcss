@@ -7,11 +7,11 @@
  */
 module.exports = function(grunt) {
 'use strict';
-    
+
   grunt.registerMultiTask('rtlcss', 'grunt plugin for rtlcss, a framework for transforming CSS from LTR to RTL.', function() {
-    
+
     var rtlcss = require('rtlcss');
-    
+
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       config:{
@@ -23,17 +23,18 @@ module.exports = function(grunt) {
         autoRename: true,
         greedy: false,
         enableLogging: false,
-        minify:false 
+        minify:false
       },
       rules:[],
       declarations:[],
       properties:[],
       map: false,
+      generateExactDuplicates: true,
     });
-    
+
     // postcss options
     var opt = { map: options.map, from:'', to:''};
-    
+
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
       // read specified files.
@@ -50,23 +51,27 @@ module.exports = function(grunt) {
         // Read file source.
         return grunt.file.read(filepath);
       });
-      
+
       // RTLCSS
       opt.to = f.dest;
       var result = rtlcss(options.config,
                              options.rules,
                              options.declarations,
                              options.properties).process(src,opt);
-      
-      // Write the destination file.
-      grunt.file.write(f.dest, result.css);
 
-      // Write the destination source map file.
-      if(options.map)
-        grunt.file.write(f.dest + '.map', result.map);
+      if(!options.generateExactDuplicates && result.css == src ) {
+         grunt.log.writeln('Nothing to flip in "' + f.src + '"' );
+      } else {
+        // Write the destination file.
+        grunt.file.write(f.dest, result.css);
 
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
+        // Write the destination source map file.
+        if(options.map)
+          grunt.file.write(f.dest + '.map', result.map);
+
+        // Print a success message.
+        grunt.log.writeln('File "' + f.dest + '" created.');
+      }
     });
   });
 
