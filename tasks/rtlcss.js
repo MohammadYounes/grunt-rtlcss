@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                              options.properties).process(src,opt);
 
       if(!options.saveUnmodified && result.css == src ) {
-         grunt.log.writeln('Nothing to flip in ' + chalk.cyan(f.src) + '.' );
+         grunt.log.writeln('Skip saving unmodified file ' + chalk.cyan(f.src) + '.' );
       } else {
         // Write the destination file.
         grunt.file.write(f.dest, result.css);
