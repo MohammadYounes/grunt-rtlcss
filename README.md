@@ -84,6 +84,13 @@ Type: `Boolean`
 
 Default: `false`
 
+#### saveUnmodified
+Description: Specifies whether to save unmodified files or not.
+
+Type: `Boolean`
+
+Default: `true`
+
 
 ### Usage Example
 
@@ -104,6 +111,8 @@ rtlcss: {
 	  properties:[],
 	  // generate source maps
 	  map: false,
+	  // save unmodified files
+	  saveUnmodified:true,
 	},
 	expand : true,
 	cwd    : 'ltr/',
@@ -119,6 +128,9 @@ rtlcss: {
 -------
 
 ## Release History
+* **v1.5.0** [14 Feb 2015]
+	* New option `saveUnmodified:true` to control whether to save unmodified files or not. Thanks **@ocean90**.
+
 * **v1.4.0** [30 Jan 2015]
 	* Upgrade to [RTLCSS] v1.x.x
 

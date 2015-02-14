@@ -12,16 +12,16 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-  
+
     // Configuration to be run.
     rtlcss: {
       'default':{
         options:{
-          // rtlcss options  
+          // rtlcss options
           config:{
-            
+
           },
-          // extend rtlcss rules 
+          // extend rtlcss rules
           rules:[],
           // extend rtlcss declarations
           declarations:[],
@@ -29,6 +29,8 @@ module.exports = function(grunt) {
           properties:[],
           // generate source maps
           map: false,
+          // save unmodified files
+          saveUnmodified:true,
         },
         expand : true,
         cwd    : 'ltr/',
@@ -36,12 +38,12 @@ module.exports = function(grunt) {
         src    : ['**/*.css']
       }
     }
-          
+
   });
 
   // Load grunt-rtlcss task.
   grunt.loadNpmTasks('grunt-rtlcss');
-  
-  // Register rtlcss task 
+
+  // Register rtlcss task
   grunt.registerTask('default', ['rtlcss']);
 };
