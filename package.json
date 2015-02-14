@@ -25,7 +25,8 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "rtlcss" : "^1.0.0"
+    "rtlcss": "^1.0.0",
+    "chalk": "~0.5.1"
   },
   "devDependencies": {
     "grunt": "~0.4.2"
