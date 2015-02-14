@@ -29,7 +29,7 @@ module.exports = function(grunt) {
       declarations:[],
       properties:[],
       map: false,
-      generateExactDuplicates: true,
+      saveUnmodified: true,
     });
 
     // postcss options
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
                              options.declarations,
                              options.properties).process(src,opt);
 
-      if(!options.generateExactDuplicates && result.css == src ) {
+      if(!options.saveUnmodified && result.css == src ) {
          grunt.log.writeln('Nothing to flip in "' + f.src + '"' );
       } else {
         // Write the destination file.
