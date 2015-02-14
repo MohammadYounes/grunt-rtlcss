@@ -128,6 +128,9 @@ rtlcss: {
 -------
 
 ## Release History
+* **v1.5.1** [14 Feb 2015]
+	* Colorize log messages. Thanks **@ocean90**.
+
 * **v1.5.0** [14 Feb 2015]
 	* New option `saveUnmodified:true` to control whether to save unmodified files or not. Thanks **@ocean90**.
 

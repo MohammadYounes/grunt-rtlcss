@@ -10,8 +10,9 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('rtlcss', 'grunt plugin for rtlcss, a framework for transforming CSS from LTR to RTL.', function() {
 
-    var rtlcss = require('rtlcss');
-    var chalk = require('chalk');
+    var rtlcss = require('rtlcss'),
+        chalk = require('chalk')
+    ;
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
