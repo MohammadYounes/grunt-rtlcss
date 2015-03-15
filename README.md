@@ -128,6 +128,9 @@ rtlcss: {
 -------
 
 ## Release History
+* **v1.6.0** [15 Mar 2015]
+	* Upgrade dependency (chalk v1.x.x).
+
 * **v1.5.1** [14 Feb 2015]
 	* Colorize log messages. Thanks **@ocean90**.
 
