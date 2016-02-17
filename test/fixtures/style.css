@@ -1,0 +1,20 @@
+body{
+  font-family:"Droid Sans", "Helvetica Neue", Arial/*rtl:prepend:"Droid Arabic Kufi", */;
+  font-size:16px/*rtl:14px*/;
+}
+
+.example {
+  display:inline-block;
+  padding:5px 10px 15px 20px;
+  margin:5px 10px 15px 20px;
+  border-style:dotted dashed double solid;
+  border-width:1px 2px 3px 4px;
+  border-color:red green blue black;
+  box-shadow: -1em 0 0.4em gray, 3px 3px 30px black;
+}
+
+/*rtl:ignore*/
+.code{
+  direction:ltr;
+  text-align:left;
+}

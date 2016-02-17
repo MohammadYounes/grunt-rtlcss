@@ -1,0 +1,21 @@
+body{
+  font-family:"Droid Arabic Kufi", "Droid Sans", "Helvetica Neue", Arial/*rtl:prepend:"Droid Arabic Kufi", */;
+  font-size:14px/*rtl:14px*/;
+}
+
+.example {
+  display:inline-block;
+  padding:5px 20px 15px 10px;
+  margin:5px 20px 15px 10px;
+  border-style:dotted solid double dashed;
+  border-width:1px 4px 3px 2px;
+  border-color:red black blue green;
+  box-shadow: 1em 0 0.4em gray, -3px 3px 30px black;
+}
+
+/*rtl:ignore*/
+.code{
+  direction:ltr;
+  text-align:left;
+}
+/*# sourceMappingURL=custom_options.css.map */

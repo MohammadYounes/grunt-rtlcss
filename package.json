@@ -24,15 +24,18 @@
   "engines": {
     "node": ">= 0.8.0"
   },
+  "scripts": {
+    "test": "grunt test"
+  },
   "dependencies": {
     "rtlcss": "^1.0.0",
     "chalk": "^1.0.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.2"
-  },
-  "peerDependencies": {
-    "grunt": "~0.4.2"
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
   },
   "keywords": [
     "grunt rtlcss", "css", "rtl", "ltr", "rtlcss", "mirror", "flip"

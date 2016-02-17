@@ -5,45 +5,79 @@
  * Copyright (c) 2014 Mohammad Younes
  * Licensed under the MIT license.
  */
+'use strict'
 
-'use strict';
-
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
+    jshint: {
+      all: [
+        'Gruntfile.js',
+        'tasks/*.js',
+        '<%= nodeunit.tests %>'
+      ],
+      options: {
+        jshintrc: '.jshintrc'
+      }
+    },
 
-    // Configuration to be run.
+    // Before generating any new files, remove any previously-created files.
+    clean: {
+      tests: ['tmp']
+    },
+
+    // Configuration to be run (and then tested).
     rtlcss: {
-      'default':{
-        options:{
+      default_options: {
+        options: {
+        },
+        files: {
+          'tmp/default_options.css': 'test/fixtures/style.css'
+        }
+      },
+      custom_options: {
+        options: {
           // rtlcss options
-          config:{
-
+          config: {
+            preserveDirectives: true
           },
           // extend rtlcss rules
-          rules:[],
+          rules: [],
           // extend rtlcss declarations
-          declarations:[],
+          declarations: [],
           // extend rtlcss properties
-          properties:[],
+          properties: [],
           // generate source maps
-          map: false,
+          map: {inline: false},
           // save unmodified files
-          saveUnmodified:true,
+          saveUnmodified: true,
         },
-        expand : true,
-        cwd    : 'ltr/',
-        dest   : 'rtl/',
-        src    : ['**/*.css']
+        files: {
+          'tmp/custom_options.css': 'test/fixtures/style.css'
+        }
       }
+    },
+
+    // Unit tests.
+    nodeunit: {
+      tests: ['test/*_test.js']
     }
 
-  });
+  })
 
-  // Load grunt-rtlcss task.
-  grunt.loadNpmTasks('grunt-rtlcss');
+  // Actually load this plugin's task(s).
+  grunt.loadTasks('tasks')
 
-  // Register rtlcss task
-  grunt.registerTask('default', ['rtlcss']);
-};
+  // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-jshint')
+  grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('grunt-contrib-nodeunit')
+
+  // Whenever the "test" task is run, first clean the "tmp" dir, then run this
+  // plugin's task(s), then test the result.
+  grunt.registerTask('test', ['clean', 'rtlcss', 'nodeunit'])
+
+  // By default, lint and run all tests.
+  grunt.registerTask('default', ['jshint', 'test'])
+
+}

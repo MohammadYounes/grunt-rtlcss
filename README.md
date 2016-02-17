@@ -1,5 +1,6 @@
 [![GitHub version](https://badge.fury.io/gh/MohammadYounes%2Fgrunt-rtlcss.svg)](http://badge.fury.io/gh/MohammadYounes%2Fgrunt-rtlcss)
 [![NPM version](https://badge.fury.io/js/grunt-rtlcss.svg)](http://badge.fury.io/js/grunt-rtlcss)
+[![Build Status](https://travis-ci.org/MohammadYounes/grunt-rtlcss.svg?branch=master)](https://travis-ci.org/MohammadYounes/grunt-rtlcss)
 [![DEPENDENCIES](https://david-dm.org/MohammadYounes/grunt-rtlcss.svg)](https://david-dm.org/MohammadYounes/grunt-rtlcss)
 
 grunt-rtlcss
@@ -31,7 +32,7 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ### Options
 
-#### config
+#### options.config
 Description: Specifies [RTLCSS options](https://github.com/MohammadYounes/rtlcss#options-object).
 
 Type: `Object`
@@ -53,7 +54,7 @@ Default:
 }
 ```
 
-#### rules
+#### options.rules
 Description: Specifies custom [RTLCSS rule level](https://github.com/MohammadYounes/rtlcss#rules-array) processing instructions.
 
 Type: `Array`
@@ -61,7 +62,7 @@ Type: `Array`
 Default: `[]`
 
 
-#### declarations
+#### options.declarations
 Description: Specifies custom [RTLCSS declaration level](https://github.com/MohammadYounes/rtlcss#declarations-array) processing instructions.
 
 Type: `Array`
@@ -69,7 +70,7 @@ Type: `Array`
 Default: `[]`
 
 
-#### properties
+#### options.properties
 Description: Specifies custom [RTLCSS property level](https://github.com/MohammadYounes/rtlcss#properties-array) processing instructions.
 
 Type: `Array`
@@ -77,10 +78,10 @@ Type: `Array`
 Default: `[]`
 
 
-#### map
-Description: Specifies whether to generate source maps or not.
+#### options.map
+Description: Specifies whether to generate source maps or not, If you want more control over source map generation, you can define the map option as an object. (see [postcss docs](https://github.com/postcss/postcss/blob/master/docs/source-maps.md#options)).
 
-Type: `Boolean`
+Type: `Boolean` or `Object`
 
 Default: `false`
 
