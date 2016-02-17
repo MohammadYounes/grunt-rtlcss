@@ -1,7 +1,60 @@
-body{
-  font-family:"Droid Arabic Kufi", "Droid Sans", "Helvetica Neue", Arial;
-  font-size:14px;
+/*
+
+Preserves orignal formatting
+
+ */
+
+/* comment before rule */
+body/* comment after rule name */{
+    /* comment before decl */
+    padding /*  comment after prop */ : /*  comment before val */ 0 /*  comment after val */ 3px /* another comment */ 2px /* one more */ 1px /* last one*/;
+    /* comment after decl */
+
+    font-family:"Droid Arabic Kufi", "Droid Sans", "Helvetica Neue", Arial;
+    font-size:14px;
+
+    margin:
+        0 /*top*/
+        3px /*right
+        multi-line
+        comment
+        */
+        2px /*bottom*/
+        1px /*left*/;
+
+    border-right/*  comment after prop */: none;
 }
+
+/* empty options forces defaults */
+/* should not process urls - default */
+@import url("rtl-right-east.css");
+div:before { content: "ABC";} div:after { content: "A";}
+
+.demo-next, .demo-Next, .demo-NEXT { content: 'p'; }
+.demo-prev, .demo-Prev, .demo-PREV { content: 'n'; }
+
+
+div {
+  text-align: left;
+  padding: 10px;
+}
+.sample {
+    text-align: left;
+}
+.right { display:inline;}
+/*rtl:begin:options:{"autoRename":true, "greedy": true}*/
+.bleft { display:inline;}
+/*rtl:end:options*/
+.brighter { display:inline;}
+
+/* auto rename only if a pair exists */
+
+/* The following should not be renamed */
+.ltr{ display: inline-flex;}
+
+/* But these should */
+.left{ display: inline-flex;}
+.right { display: block;}
 
 .example {
   display:inline-block;

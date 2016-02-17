@@ -2,7 +2,7 @@
  * grunt-rtlcss
  * https://github.com/MohammadYounes/grunt-rtlcss
  *
- * Copyright (c) 2014 Mohammad Younes
+ * Copyright (c) 2016 Mohammad Younes
  * Licensed under the MIT license.
  */
 'use strict'
@@ -29,26 +29,23 @@ module.exports = function (grunt) {
     // Configuration to be run (and then tested).
     rtlcss: {
       default_options: {
+        // task options
         options: {
+          //default
         },
         files: {
           'tmp/default_options.css': 'test/fixtures/style.css'
         }
       },
       custom_options: {
+        // task options
         options: {
-          // rtlcss options
-          config: {
-            preserveDirectives: true
-          },
-          // extend rtlcss rules
-          rules: [],
-          // extend rtlcss declarations
-          declarations: [],
-          // extend rtlcss properties
-          properties: [],
           // generate source maps
           map: {inline: false},
+          // rtlcss options
+          opts: {
+            clean: false
+          },
           // save unmodified files
           saveUnmodified: true,
         },

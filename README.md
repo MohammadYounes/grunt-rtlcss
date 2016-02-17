@@ -32,51 +32,31 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ### Options
 
-#### options.config
+#### options.opts
 Description: Specifies [RTLCSS options](https://github.com/MohammadYounes/rtlcss#options-object).
 
 Type: `Object`
 
 Default:
 
-```JS
+```js
 {
-	preserveComments: true,
-	preserveDirectives: false,
-	swapLeftRightInUrl: true,
-	swapLtrRtlInUrl: true,
-	swapWestEastInUrl: true,
-	autoRename: true,
-	greedy: false,
-	stringMap:[...],
-	enableLogging: false,
-	minify:false
+    "autoRename": false,
+    "autoRenameStrict": false,
+    "blacklist":{},
+    "clean": true,
+    "greedy": false,
+    "processUrls": false,
+    "stringMap":[]
 }
 ```
 
-#### options.rules
-Description: Specifies custom [RTLCSS rule level](https://github.com/MohammadYounes/rtlcss#rules-array) processing instructions.
+#### options.plugins
+Description: Specifies custom [RTLCSS plugins](https://github.com/MohammadYounes/rtlcss#plugins-array).
 
 Type: `Array`
 
 Default: `[]`
-
-
-#### options.declarations
-Description: Specifies custom [RTLCSS declaration level](https://github.com/MohammadYounes/rtlcss#declarations-array) processing instructions.
-
-Type: `Array`
-
-Default: `[]`
-
-
-#### options.properties
-Description: Specifies custom [RTLCSS property level](https://github.com/MohammadYounes/rtlcss#properties-array) processing instructions.
-
-Type: `Array`
-
-Default: `[]`
-
 
 #### options.map
 Description: Specifies whether to generate source maps or not, If you want more control over source map generation, you can define the map option as an object. (see [postcss docs](https://github.com/postcss/postcss/blob/master/docs/source-maps.md#options)).
@@ -92,43 +72,46 @@ Type: `Boolean`
 
 Default: `true`
 
-
 ### Usage Example
 
-```JS
+```js
 rtlcss: {
-  'default':{
-	options:{
-	  // rtlcss options  
-	  config:{
-	  	preserveComments: false,
-	  	greedy: true
-	  },
-	  // extend rtlcss rules
-	  rules:[],
-	  // extend rtlcss declarations
-	  declarations:[],
-	  // extend rtlcss properties
-	  properties:[],
-	  // generate source maps
-	  map: false,
-	  // save unmodified files
-	  saveUnmodified:true,
-	},
-	expand : true,
-	cwd    : 'ltr/',
-	dest   : 'rtl/',
-	src    : ['**/*.css']
+  myTask:{
+    // task options
+    options: {
+      // generate source maps
+      map: {inline: false},
+      // rtlcss options
+      opts: {
+        clean:false
+      },
+      // rtlcss plugins
+      plugins:[],
+      // save unmodified files
+      saveUnmodified: true,
+    },
+    expand : true,
+    cwd    : 'ltr/',
+    dest   : 'rtl/',
+    src    : ['**/*.css']
   }
 }
 ```
-
 
 [RTLCSS]: https://github.com/MohammadYounes/rtlcss
 
 -------
 
 ## Release History
+
+* **v2.0.0** [18 Feb 2016] 
+  * Upgrade to [RTLCSS] v2.x
+  * `options.config` renamed to `options.opts` (avoids confusion with [RTLCSS Config](https://github.com/MohammadYounes/rtlcss/blob/master/.rtlcssrc)).
+  * `options.rules`, `options.declarations` and `options.properties` removed in favor of the new `options.plugins`.
+
+  [RTLCSS] options have changed, to view a summary of changes, see [RTLCSS Upgrade guide](https://github.com/MohammadYounes/rtlcss/blob/master/CHANGELOG.md#upgrading-from-version-10).
+
+---
 * **v1.6.0** [15 Mar 2015]
 	* Upgrade dependency (chalk v1.x.x).
 
