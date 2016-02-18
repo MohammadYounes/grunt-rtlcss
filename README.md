@@ -104,7 +104,10 @@ rtlcss: {
 
 ## Release History
 
-* **v2.0.0** [18 Feb 2016] 
+* **v2.0.1** [18 Feb 2016]
+  * Fix internal bug.
+
+* **v2.0.0** [18 Feb 2016]
   * Upgrade to [RTLCSS] v2.x
   * `options.config` renamed to `options.opts` (avoids confusion with [RTLCSS Config](https://github.com/MohammadYounes/rtlcss/blob/master/.rtlcssrc)).
   * `options.rules`, `options.declarations` and `options.properties` removed in favor of the new `options.plugins`.
