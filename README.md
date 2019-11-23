@@ -104,6 +104,9 @@ rtlcss: {
 
 ## Release History
 
+* **v2.0.2** [23 Nov 2019]
+  * Fail in case of CSS errors or inability to write output file.
+
 * **v2.0.1** [18 Feb 2016]
   * Fix internal bug.
 
