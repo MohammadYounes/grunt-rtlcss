@@ -10,7 +10,8 @@ module.exports = function (grunt) {
 
   grunt.registerMultiTask('rtlcss', 'grunt plugin for rtlcss, a framework for transforming CSS from LTR to RTL.', function () {
     var rtlcss = require('rtlcss'),
-      chalk = require('chalk')
+      chalk = require('chalk'),
+      fs = require('fs')
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
@@ -29,7 +30,7 @@ module.exports = function (grunt) {
     })
 
     // postcss options
-    var postcssOptions = { map: options.map, from: '', to: ''}
+    var postcssOptions = { map: options.map, from: '', to: '' }
 
     // Iterate over all specified file groups.
     this.files.forEach(function (f) {
@@ -50,17 +51,27 @@ module.exports = function (grunt) {
 
       // RTLCSS
       postcssOptions.to = f.dest
-      var result = rtlcss.configure({options:options.opts,plugins:options.plugins}).process(src, postcssOptions)
+      
+      var result = rtlcss.configure({ options: options.opts, plugins: options.plugins }).process(src, postcssOptions)
+      
+      if (result.error) {
+        grunt.fail.fatal("Could not convert: " + f.dest + " due to: " + result.error)
+      }
 
       if (!options.saveUnmodified && result.css == src) {
         grunt.log.writeln('Skip saving unmodified file ' + chalk.cyan(f.src) + '.')
       } else {
         // Write the destination file.
         grunt.file.write(f.dest, result.css)
+        
+        if (!fs.existsSync(f.dest)) {
+          grunt.fail.fatal("Could not create file: " + f.dest)
+        }
 
         // Write the destination source map file.
-        if (options.map)
+        if (options.map) {
           grunt.file.write(f.dest + '.map', result.map)
+        }
 
         // Print a success message.
         grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created.')
